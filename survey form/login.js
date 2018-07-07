@@ -10,7 +10,8 @@
   };
   firebase.initializeApp(config);
 
-function login(){
+function login()
+{
 
   var userEmail = document.getElementById("email").value;
   var userPass = document.getElementById("password").value;
@@ -21,7 +22,7 @@ function login(){
     // Handle Errors here.
     var errorCode = error.code;
     var errorMessage = error.message;
-    window.alert(errorMessage);
+    alert("Error");
   });
 
 }
@@ -63,9 +64,7 @@ else{
 var meals=0;
 }  
 
-alert(meals);   
-      
-   alert("!");
+
 
      var ref = firebase.database().ref();
             //alert(ref);
@@ -140,7 +139,7 @@ firebase.database().ref('Survey/'+ ref.push().key).set({
             });                 
 
                                
-              alert(document.getElementById("sname").value);
+             // alert(document.getElementById("sname").value);
               
    
                                                                                                   

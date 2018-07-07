@@ -9,47 +9,64 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <script type="text/javascript" src="https://ff.kis.v2.scr.kaspersky-labs.com/B70776C7-D5CE-C74D-8515-C34AD5AF67DF/main.js" charset="UTF-8"></script><link rel="stylesheet" crossorigin="anonymous" href="https://ff.kis.v2.scr.kaspersky-labs.com/14940624-7CC5-A24C-9FCC-5E3105355428/abn/main.css"/><script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.1.0/firebase.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 </head>
 <body>
+<script type="text/javascript">
+var config = {
+    apiKey: "AIzaSyBNTzvVNF9AVSdBp7FbpxcehI7r6fR5KDw",
+    authDomain: "codeforgood-f9f92.firebaseapp.com",
+    databaseURL: "https://codeforgood-f9f92.firebaseio.com",
+    projectId: "codeforgood-f9f92",
+    storageBucket: "codeforgood-f9f92.appspot.com",
+    messagingSenderId: "882009424031"
+  };
+  firebase.initializeApp(config);
 
-<div class="container">
-  <h2>WELCOME TO SURVEY</h2>
-  <p></p>            
-  <table class="table">
-    <thead>
-      <tr>
-        <th>Serial number</th>
-        <th>Question</th>
-        <th>Answers</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
- <button type="submit" class="button button-block"/>Approve</button>
- <button type="submit" class="button button-block"/>Reject</button>
-</div>
+document.writeln("<h2>WELCOME TO SURVEY</h2><p></p><table><thead><tr><th>Serial number</th><th>Question</th><th>Answers</th></tr></thead><tbody>");
+var playersRef = firebase.database().ref("Survey/");
+var ques=["What","Why","What","Why","What","Why","What","Why","What","Why","What","Why","What","Why","What","Why","What","Why","What","Why","What","Why","What","Why","What","Why"];
+var i=0;
+playersRef.on("child_added", function(data, prevChildKey) {
+   var newPlayer = data.val();
+
+   console.log("SchoolId: " + newPlayer.SchoolId);
+   console.log("Ans: " + newPlayer.Ans);
+   console.log("Previous Player: " + prevChildKey);
+
+$(document).ready(function () {
+         
+  var tr;
+    tr = $('<tr/>');
+
+ tr.append("<td>" + newPlayer.SchoolId + "</td>");
+tr.append("<td>"+ques[i]+"</td>");
+    tr.append("<td>" + newPlayer.Ans + "</td>");
+
+    $('table').first().append(tr);
+   
+
+});
+i=i+1;
+//alert(json1);
+});
+
+
+</script>   
+
+<table style="border: 2px solid black">
+    <tr>
+        <th>score</th>
+        <th>team</th>
+    </tr>
+</table>
+
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
 
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 

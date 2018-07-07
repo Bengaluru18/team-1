@@ -146,7 +146,7 @@ firebase.database().ref('Survey/'+ ref.push().key).set({
         Girls:50,
         NameOfIncharge:1,
         SchoolActive:1,
-        SchoolName:1,
+        SchoolName:3,
         StartDate:"07/07/18",
         status:0
 
@@ -158,7 +158,7 @@ firebase.database().ref('Survey/'+ ref.push().key).set({
         Girls:50,
         NameOfIncharge:1,
         SchoolActive:1,
-        SchoolName:1,
+        SchoolName:2,
         StartDate:"07/07/18",
         status:0
 

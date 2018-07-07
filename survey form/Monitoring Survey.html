@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
        <!--Load the AJAX API-->
-    <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase.js"></script>
+    <script type="text/javascript" src="https://ff.kis.v2.scr.kaspersky-labs.com/B70776C7-D5CE-C74D-8515-C34AD5AF67DF/main.js" charset="UTF-8"></script><link rel="stylesheet" crossorigin="anonymous" href="https://ff.kis.v2.scr.kaspersky-labs.com/14940624-7CC5-A24C-9FCC-5E3105355428/abn/main.css"/><script src="https://www.gstatic.com/firebasejs/5.1.0/firebase.js"></script>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    
+    <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase.js"></script>
     <script type="text/javascript">
     var config = {
     apiKey: "AIzaSyBNTzvVNF9AVSdBp7FbpxcehI7r6fR5KDw",
@@ -26,12 +26,12 @@ var c3=0;
 
 var playersRef = firebase.database().ref("Projects/");
 playersRef.on("child_added", function(data, prevChildKey) {
-var newX = data.val();
-console.log(newX);
+   var newX = data.val();
+   console.log(newX);
 console.log(newX.Status);
-if(newX.Status=="Incomplete"){c1=c1+1;}
+ if(newX.Status=="Incomplete"){c1=c1+1;}
 else if(newX.Status=="Completed"){c2=c2+1;}
-    else if(newX.Status=="Not started"){c3=c3+1;}
+    else {c3=c3+1;}
 
 
       // Load the Visualization API and the corechart package.
@@ -100,10 +100,23 @@ else if(newX.Status=="Completed"){c2=c2+1;}
 <script type="text/javascript">
     $(document).ready(function(){
         $(".add-row").click(function(){
-            var a = $("#1").val();
-            var b = $("#3").val();
-                var c = $("#2").val();
 
+            var a = $("#1").val();a.replace(/["]/g, "");
+            var b = $("#3").val();b.replace(/["]/g, "");
+            var c = $("#2").val();b.replace(/["]/g, "");
+
+var ref = firebase.database().ref();
+                     
+                firebase.database().ref('Projects/'+ ref.push().key).set({
+                Human:1,
+                Kind:1,
+		Money:1,
+		Qty:1,
+		Remarks:c,
+		School_id:123,
+		Status:b,
+		Task_id:a
+            });
            
 
             var markup = "<tr><td>" + a + "</td><td>"+ b +"</td><td>"+ c + "</td></tr>";

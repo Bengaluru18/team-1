@@ -139,7 +139,13 @@ firebase.database().ref('Survey/'+ ref.push().key).set({
             });                 
 
                                
-             // alert(document.getElementById("sname").value);
+              alert("All Data Added Sucesfully");
+            var tid = setInterval(function(){
+                //called 5 times each time after one second  
+              //before getting cleared by below timeout. 
+           },1000); //delay is in milliseconds 
+
+                window.location.href = "../survey form/fw1.html";
               
    
                                                                                                   

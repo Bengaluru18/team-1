@@ -35,7 +35,35 @@ function readSurvey(){
 //alert("!!!");
     var no=document.getElementById("no").value;
     var boys=document.getElementById("boys").value;
-   var girls=document.getElementById("girls").value;      
+   var girls=document.getElementById("girls").value; 
+var benches=document.getElementById("benches").value;
+var washrooms=document.getElementById("washrooms").value;
+if(document.getElementById("library").value=="on"){
+var library=1;
+}
+else{
+var library=0;
+}
+if(document.getElementById("scholars").value=="on"){
+var scholars=1;
+}
+else{
+var scholars=0;
+}
+if(document.getElementById("health").value=="on"){
+var health=1;
+}
+else{
+var health=0;
+}
+if(document.getElementById("meals").value=="on"){
+var meals=1;
+}
+else{
+var meals=0;
+}  
+
+alert(meals);   
       
    alert("!");
 
@@ -67,7 +95,51 @@ function readSurvey(){
                     QuestionId: "4",
 			SchoolId: "123"
 
+            }); 
+
+firebase.database().ref('Survey/'+ ref.push().key).set({
+                Ans: benches,
+                    QuestionId: "5",
+			SchoolId: "123"
+
             });                 
+
+firebase.database().ref('Survey/'+ ref.push().key).set({
+                Ans: washrooms,
+                    QuestionId: "6",
+			SchoolId: "123"
+
+            });                 
+
+firebase.database().ref('Survey/'+ ref.push().key).set({
+                Ans: library,
+                    QuestionId: "7",
+			SchoolId: "123"
+
+            });                 
+
+firebase.database().ref('Survey/'+ ref.push().key).set({
+                Ans: scholars,
+                    QuestionId: "8",
+			SchoolId: "123"
+
+            });                 
+
+firebase.database().ref('Survey/'+ ref.push().key).set({
+                Ans: health,
+                    QuestionId: "9",
+			SchoolId: "123"
+
+            });                 
+
+firebase.database().ref('Survey/'+ ref.push().key).set({
+                Ans: meals,
+                    QuestionId: "10",
+			SchoolId: "123"
+
+            });                 
+
+                               
               alert(document.getElementById("sname").value);
               
    

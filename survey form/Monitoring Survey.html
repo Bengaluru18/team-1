@@ -26,10 +26,10 @@ var c3=0;
 
 var playersRef = firebase.database().ref("Projects/");
 playersRef.on("child_added", function(data, prevChildKey) {
-   var newX = data.val();
-   console.log(newX);
+var newX = data.val();
+console.log(newX);
 console.log(newX.Status);
- if(newX.Status=="Incomplete"){c1=c1+1;}
+if(newX.Status=="Incomplete"){c1=c1+1;}
 else if(newX.Status=="Completed"){c2=c2+1;}
     else if(newX.Status=="Not started"){c3=c3+1;}
 

@@ -33,22 +33,42 @@ function readSurvey(){
     var id=1;
     var sname=document.getElementById("sname").value;
 //alert("!!!");
-  //  var no=document.getElementById("no").value;
-    //var boys=document.getElementById("boys").value;
-    //var girls=document.getElementById("girls").value;      
+    var no=document.getElementById("no").value;
+    var boys=document.getElementById("boys").value;
+   var girls=document.getElementById("girls").value;      
       
    alert("!");
-    // writing message onto firebase database first
-    //var user = firebase.auth().currentUser;
 
      var ref = firebase.database().ref();
             //alert(ref);
                      
-                firebase.database().ref('Questionaire/'+ ref.push().key).set({
-                Ans: document.getElementById("sname").value,
-                    Question: document.getElementById("sname").value,
-            });                
-              //alert(document.getElementById("sname").value);
+                firebase.database().ref('Survey/'+ ref.push().key).set({
+                Ans: sname,
+                    QuestionId: "1",
+			SchoolId: "123"
+
+            });
+
+ 
+ firebase.database().ref('Survey/'+ ref.push().key).set({
+                Ans: no,
+                    QuestionId: "2",
+			SchoolId: "123"
+
+            });  
+ firebase.database().ref('Survey/'+ ref.push().key).set({
+                Ans: boys,
+                    QuestionId: "3",
+			SchoolId: "123"
+
+            });  
+ firebase.database().ref('Survey/'+ ref.push().key).set({
+                Ans: girls,
+                    QuestionId: "4",
+			SchoolId: "123"
+
+            });                 
+              alert(document.getElementById("sname").value);
               
    
                                                                                                   

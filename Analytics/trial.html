@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>SURVEY</title>
+  <title>Sign-Up/Login Form</title>
+
+<script src="https://www.gstatic.com/firebasejs/5.1.0/firebase.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+var config = {
+    apiKey: "AIzaSyBNTzvVNF9AVSdBp7FbpxcehI7r6fR5KDw",
+    authDomain: "codeforgood-f9f92.firebaseapp.com",
+    databaseURL: "https://codeforgood-f9f92.firebaseio.com",
+    projectId: "codeforgood-f9f92",
+    storageBucket: "codeforgood-f9f92.appspot.com",
+    messagingSenderId: "882009424031"
+  };
+  firebase.initializeApp(config);
+
+alert("in test");
+
+
+var c1=0;
+var c2=0;
+var c3=0;
+var read=function(){
+alert("read");
+var playersRef = firebase.database().ref("Projects/");
+playersRef.on("child_added", function(data, prevChildKey) {
+   var newX = data.val();
+console.log(newX.Status);
+ if(newX.Status=="Incomplete"){c1=c1+1;}
+
+});
+console.log(c1);
+}
+
+read();
+
+
+
+</script>
+</body>
+</html>

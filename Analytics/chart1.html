@@ -1,19 +1,49 @@
 <!DOCTYPE html>
 <html>
   <head>
+
     <!--Load the AJAX API-->
+    <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase.js"></script>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    
     <script type="text/javascript">
+    var config = {
+    apiKey: "AIzaSyBNTzvVNF9AVSdBp7FbpxcehI7r6fR5KDw",
+    authDomain: "codeforgood-f9f92.firebaseapp.com",
+    databaseURL: "https://codeforgood-f9f92.firebaseio.com",
+    projectId: "codeforgood-f9f92",
+    storageBucket: "codeforgood-f9f92.appspot.com",
+    messagingSenderId: "882009424031"
+  };
+  firebase.initializeApp(config);
+
+
+
+
+var c1=0;
+var c2=0;
+var c3=0;
+
+
+var playersRef = firebase.database().ref("Projects/");
+playersRef.on("child_added", function(data, prevChildKey) {
+   var newX = data.val();
+   console.log(newX);
+console.log(newX.Status);
+ if(newX.Status=="Incomplete"){c1=c1+1;}
+
 
       // Load the Visualization API and the corechart package.
+      console.log(c1);
       google.charts.load('current', {'packages':['corechart']});
 
       // Set a callback to run when the Google Visualization API is loaded.
-      google.charts.setOnLoadCallback(drawChart);
+      
 
       // Callback that creates and populates a data table,
       // instantiates the pie chart, passes in the data and
       // draws it.
+
       function drawChart() {
 
         // Create the data table.
@@ -21,9 +51,9 @@
         data.addColumn('string', 'Status');
         data.addColumn('number', 'Tasks');
         data.addRows([
-          ['Incomplete', 3],
-          ['Completed', 1],
-          ['Not started', 1],
+          ['Incomplete', c1],
+          ['Completed', 5],
+          ['Not started', 4],
           // ['Zucchini', 1],
           // ['Pepperoni', 2]
         ]);
@@ -39,6 +69,9 @@
         var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
         chart.draw(data, options);
       }
+      google.charts.setOnLoadCallback(drawChart);
+      });
+
     </script>
   </head>
 

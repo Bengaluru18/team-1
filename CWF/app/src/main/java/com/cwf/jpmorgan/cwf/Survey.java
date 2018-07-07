@@ -1,11 +1,14 @@
 package com.cwf.jpmorgan.cwf;
 
 public class Survey {
-    private String schoolid;
-    private String quesid;
-    private String Answer;
+    public String schoolid;
+    public String quesid;
+    public String Answer;
 
+Survey()
+{
 
+}
     Survey(String schoolid,String quesid,String Answer)
     {
         this.Answer=Answer;

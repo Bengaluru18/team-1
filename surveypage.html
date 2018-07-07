@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>ADD PROJECT</title>
+<style type="text/css">
+    form{
+        margin: 20px 0;
+    }
+    form input, button{
+        padding: 5px;
+    }
+    table{
+        width: 100%;
+        margin-bottom: 20px;
+		border-collapse: collapse;
+    }
+    table, th, td{
+        border: 1px solid #cdcdcd;
+    }
+    table th, table td{
+        padding: 10px;
+        text-align: left;
+    }
+</style>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $(".add-row").click(function(){
+            var a = $("#1").val();
+            var b = $("#2").val();
+            var c = $("#3").val();
+            var d = $("#4").val();
+            var e = $("#5").val();
+
+            var markup = "<tr><td>" + a + "</td><td>" + b + "</td><td>" + c + "</td><td>" + d + "</td><td>" + e + "</td></tr>";
+            
+            $("table tbody").append(markup);
+        });
+        
+        // Find and remove selected table rows
+        $(".delete-row").click(function(){
+            $("table tbody").find('input[name="record"]').each(function(){
+            	if($(this).is(":checked")){
+                    $(this).parents("tr").remove();
+                }
+            });
+        });
+    });    
+</script>
+</head>
+<body>
+    <form>
+        Project name <input type="text" id="1">
+        Project name <input type="text" id="2">
+        Project name <input type="text" id="3">
+        Project name <input type="text" id="4">
+        money <input id="5" type="checkbox"  value="money"> 
+        Kind <input id="5" type="checkbox" value="kind"> 
+        Human <input id="5" type="checkbox" value="human">
+        
+    	<input type="button" class="add-row" value="Add Row">
+    </form>
+    <table>
+        <thead>
+            <tr>
+                <th>Activity</th>
+                <th>Stakeholders</th>
+                <th>Resources</th>
+                <th>Stakeholders</th>
+                <th>Resources</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+          
+
+                
+            </tr>
+        </tbody>
+    </table>
+    <button type="button" class="delete-row">Delete Row</button>
+</body> 
+</html>                            

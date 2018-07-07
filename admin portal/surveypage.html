@@ -9,9 +9,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 </head>
 <body>
 <script type="text/javascript">
@@ -28,49 +29,43 @@ var config = {
 alert("in test");
 document.writeln("<h2>WELCOME TO SURVEY</h2><p></p><table><thead><tr><th>Serial number</th><th>Question</th><th>Answers</th></tr></thead><tbody>");
 var playersRef = firebase.database().ref("Survey/");
-
+var ques=["What","Why","What","Why","What","Why","What","Why","What","Why","What","Why","What","Why","What","Why","What","Why","What","Why","What","Why","What","Why","What","Why"];
+var i=0;
 playersRef.on("child_added", function(data, prevChildKey) {
    var newPlayer = data.val();
+
    console.log("SchoolId: " + newPlayer.SchoolId);
    console.log("Ans: " + newPlayer.Ans);
-  document.writeln("<tr><td>"+newPlayer.SchoolId+"</td></tr>");
    console.log("Previous Player: " + prevChildKey);
 
+$(document).ready(function () {
+         
+  var tr;
+    tr = $('<tr/>');
+
+ tr.append("<td>" + newPlayer.SchoolId + "</td>");
+tr.append("<td>"+ques[i]+"</td>");
+    tr.append("<td>" + newPlayer.Ans + "</td>");
+
+    $('table').first().append(tr);
+   
+
 });
-document.write("</table>");
-</script>
-<div class="container">
-  <h2>WELCOME TO SURVEY</h2>
-  <p></p>            
-  <table class="table">
-    <thead>
-      <tr>
-        <th>Serial number</th>
-        <th>Question</th>
-        <th>Answers</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
- <button type="submit" class="button button-block"/>Approve</button>
- <button type="submit" class="button button-block"/>Reject</button>
-</div>
+i=i+1;
+//alert(json1);
+});
+
+
+</script>   
+
+<table>
+    <tr>
+        <th></th>
+        <th>score</th>
+        <th>team</th>
+    </tr>
+</table>
+
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>

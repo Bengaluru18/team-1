@@ -14,7 +14,7 @@
 <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 </head>
-<body>
+<body style="background-image: none;">
 <script type="text/javascript">
 var config = {
     apiKey: "AIzaSyBNTzvVNF9AVSdBp7FbpxcehI7r6fR5KDw",
@@ -28,7 +28,7 @@ var config = {
 
 document.writeln("<h2>WELCOME TO SURVEY</h2><p></p><table><thead><tr><th>Serial number</th><th>Question</th><th>Answers</th></tr></thead><tbody>");
 var playersRef = firebase.database().ref("Survey/");
-var ques=["What","Why","What","Why","What","Why","What","Why","What","Why","What","Why","What","Why","What","Why","What","Why","What","Why","What","Why","What","Why","What","Why"];
+var ques=["School Name","Number of Children at the School","Number of Boys","Number of Girls","Number of benches","library available","any scholarships offered to students","any regular health checkups done at the school","any Mid-Day meals offered to students at the school"];
 var i=0;
 playersRef.on("child_added", function(data, prevChildKey) {
    var newPlayer = data.val();

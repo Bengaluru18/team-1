@@ -138,9 +138,48 @@ firebase.database().ref('Survey/'+ ref.push().key).set({
 
             });                 
 
-                               
+                              
+    firebase.database().ref('School/'+ 123).set({
+        Boys: 80,
+        Cluster: 1,
+        DateEnd: "12/01/18",
+        Girls:50,
+        NameOfIncharge:1,
+        SchoolActive:1,
+        SchoolName:3,
+        StartDate:"07/07/18",
+        status:0
+
+            });   
+        firebase.database().ref('School/'+ 456).set({
+        Boys: 80,
+        Cluster: 1,
+        DateEnd: "12/01/18",
+        Girls:50,
+        NameOfIncharge:1,
+        SchoolActive:1,
+        SchoolName:2,
+        StartDate:"07/07/18",
+        status:0
+
+            });  
+        firebase.database().ref('School/'+ 789).set({
+        Boys: 80,
+        Cluster: 1,
+        DateEnd: "12/01/18",
+        Girls:50,
+        NameOfIncharge:1,
+        SchoolActive:1,
+        SchoolName:1,
+        StartDate:"07/07/18",
+        status:0
+
+            });  
+
               alert("All Data Added Sucesfully");
-           
+    
+    
+       
               
    
                                                                                                   

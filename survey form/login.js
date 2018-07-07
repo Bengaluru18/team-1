@@ -148,7 +148,7 @@ firebase.database().ref('Survey/'+ ref.push().key).set({
         SchoolActive:1,
         SchoolName:1,
         StartDate:"07/07/18",
-        status:1
+        status:0
 
             });   
         firebase.database().ref('School/'+ 456).set({
@@ -160,7 +160,7 @@ firebase.database().ref('Survey/'+ ref.push().key).set({
         SchoolActive:1,
         SchoolName:1,
         StartDate:"07/07/18",
-        status:2
+        status:0
 
             });  
         firebase.database().ref('School/'+ 789).set({
@@ -172,7 +172,7 @@ firebase.database().ref('Survey/'+ ref.push().key).set({
         SchoolActive:1,
         SchoolName:1,
         StartDate:"07/07/18",
-        status:3
+        status:0
 
             });  
 

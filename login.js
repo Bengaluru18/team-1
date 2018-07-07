@@ -38,10 +38,32 @@ function readSurvey(){
    var girls=document.getElementById("girls").value; 
 var benches=document.getElementById("benches").value;
 var washrooms=document.getElementById("washrooms").value;
-var library=document.getElementById("library").value;
-var scholars=document.getElementById("scholars").value;
-var health=document.getElementById("health").value;
-var meals=document.getElementById("meals").value;     
+if(document.getElementById("library").value=="on"){
+var library=1;
+}
+else{
+var library=0;
+}
+if(document.getElementById("scholars").value=="on"){
+var scholars=1;
+}
+else{
+var scholars=0;
+}
+if(document.getElementById("health").value=="on"){
+var health=1;
+}
+else{
+var health=0;
+}
+if(document.getElementById("meals").value=="on"){
+var meals=1;
+}
+else{
+var meals=0;
+}  
+
+alert(meals);   
       
    alert("!");
 
@@ -117,10 +139,9 @@ firebase.database().ref('Survey/'+ ref.push().key).set({
 
             });                 
 
-                                
+                               
               alert(document.getElementById("sname").value);
               
    
                                                                                                   
-}                                                                                 
 }

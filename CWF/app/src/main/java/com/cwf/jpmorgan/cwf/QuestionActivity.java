@@ -46,13 +46,11 @@ public class QuestionActivity extends AppCompatActivity{
                 //String userId = mDatabase.push().getKey();
                  //   mDatabase.child(userId.replace(".",",")).child(mDatabase.push().getKey()).setValue(m1);
                 String id=mDatabase.push().getKey();
-                Log.i("abc","afkja");
+                Log.i("abc",id);
 
-                DatabaseReference mDatabase=FirebaseDatabase.getInstance().getReference("Survey/"+id);
+                DatabaseReference mDatabase=FirebaseDatabase.getInstance().getReference("ABC"+id);
 
                 Survey m1=new Survey(Ans1.toString(),"1","abc");
-                Log.i("fjafn","aesk");
-                Log.i("egns",mDatabase.toString());
                 mDatabase.child(mDatabase.push().getKey()).setValue(m1);
                 Log.i("ejfnaw","afkjan");
 

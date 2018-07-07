@@ -25,3 +25,31 @@ function login(){
   });
 
 }
+
+function readSurvey(){
+
+//alert("in read survey");
+//alert("!!");	
+    var id=1;
+    var sname=document.getElementById("sname").value;
+//alert("!!!");
+  //  var no=document.getElementById("no").value;
+    //var boys=document.getElementById("boys").value;
+    //var girls=document.getElementById("girls").value;      
+      
+   alert("!");
+    // writing message onto firebase database first
+    //var user = firebase.auth().currentUser;
+
+     var ref = firebase.database().ref();
+            //alert(ref);
+                     
+                firebase.database().ref('Questionaire/'+ ref.push().key).set({
+                Ans: document.getElementById("sname").value,
+                    Question: document.getElementById("sname").value,
+            });                
+              //alert(document.getElementById("sname").value);
+              
+   
+                                                                                                  
+}

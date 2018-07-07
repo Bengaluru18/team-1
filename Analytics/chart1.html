@@ -31,6 +31,8 @@ playersRef.on("child_added", function(data, prevChildKey) {
    console.log(newX);
 console.log(newX.Status);
  if(newX.Status=="Incomplete"){c1=c1+1;}
+else if(newX.Status=="Completed"){c2=c2+1;}
+    else if(newX.Status=="Not started"){c3=c3+1;}
 
 
       // Load the Visualization API and the corechart package.
@@ -52,8 +54,8 @@ console.log(newX.Status);
         data.addColumn('number', 'Tasks');
         data.addRows([
           ['Incomplete', c1],
-          ['Completed', 5],
-          ['Not started', 4],
+          ['Completed', c2],
+          ['Not started', c3],
           // ['Zucchini', 1],
           // ['Pepperoni', 2]
         ]);

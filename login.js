@@ -35,7 +35,13 @@ function readSurvey(){
 //alert("!!!");
     var no=document.getElementById("no").value;
     var boys=document.getElementById("boys").value;
-   var girls=document.getElementById("girls").value;      
+   var girls=document.getElementById("girls").value; 
+var benches=document.getElementById("benches").value;
+var washrooms=document.getElementById("washrooms").value;
+var library=document.getElementById("library").value;
+var scholars=document.getElementById("scholars").value;
+var health=document.getElementById("health").value;
+var meals=document.getElementById("meals").value;     
       
    alert("!");
 
@@ -67,9 +73,54 @@ function readSurvey(){
                     QuestionId: "4",
 			SchoolId: "123"
 
+            }); 
+
+firebase.database().ref('Survey/'+ ref.push().key).set({
+                Ans: benches,
+                    QuestionId: "5",
+			SchoolId: "123"
+
             });                 
+
+firebase.database().ref('Survey/'+ ref.push().key).set({
+                Ans: washrooms,
+                    QuestionId: "6",
+			SchoolId: "123"
+
+            });                 
+
+firebase.database().ref('Survey/'+ ref.push().key).set({
+                Ans: library,
+                    QuestionId: "7",
+			SchoolId: "123"
+
+            });                 
+
+firebase.database().ref('Survey/'+ ref.push().key).set({
+                Ans: scholars,
+                    QuestionId: "8",
+			SchoolId: "123"
+
+            });                 
+
+firebase.database().ref('Survey/'+ ref.push().key).set({
+                Ans: health,
+                    QuestionId: "9",
+			SchoolId: "123"
+
+            });                 
+
+firebase.database().ref('Survey/'+ ref.push().key).set({
+                Ans: meals,
+                    QuestionId: "10",
+			SchoolId: "123"
+
+            });                 
+
+                                
               alert(document.getElementById("sname").value);
               
    
                                                                                                   
+}                                                                                 
 }

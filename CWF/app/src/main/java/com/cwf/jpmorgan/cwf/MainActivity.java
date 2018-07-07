@@ -1,4 +1,4 @@
-package com.cwf.jpmorgan.codeforgood;
+package com.cwf.jpmorgan.cwf;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -9,7 +9,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -55,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
                                     Log.i("login","success");
                                     Intent i = new Intent(MainActivity.this,QuestionActivity.class);
                                     //i.putExtra("loginEmail",email.getText().toString());
-                                     startActivity(i);
+                                    startActivity(i);
 
                                 }
                                 else

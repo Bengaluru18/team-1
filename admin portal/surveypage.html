@@ -3,8 +3,6 @@
 <head>
   <title>SURVEY</title>
   <title>Sign-Up/Login Form</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-
   <link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,300,600' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel="stylesheet" href="css/style.css"> 
@@ -12,8 +10,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
-  <script type="text/javascript" src="https://ff.kis.v2.scr.kaspersky-labs.com/B70776C7-D5CE-C74D-8515-C34AD5AF67DF/main.js" charset="UTF-8"></script><link rel="stylesheet" crossorigin="anonymous" href="https://ff.kis.v2.scr.kaspersky-labs.com/14940624-7CC5-A24C-9FCC-5E3105355428/abn/main.css"/><script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="https://ff.kis.v2.scr.kaspersky-labs.com/B70776C7-D5CE-C74D-8515-C34AD5AF67DF/main.js" charset="UTF-8"></script><link rel="stylesheet" crossorigin="anonymous" href="https://ff.kis.v2.scr.kaspersky-labs.com/14940624-7CC5-A24C-9FCC-5E3105355428/abn/main.css"/><script type="text/javascript" src="https://ff.kis.v2.scr.kaspersky-labs.com/B70776C7-D5CE-C74D-8515-C34AD5AF67DF/main.js" charset="UTF-8"></script><link rel="stylesheet" crossorigin="anonymous" href="https://ff.kis.v2.scr.kaspersky-labs.com/14940624-7CC5-A24C-9FCC-5E3105355428/abn/main.css"/><script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 </head>
 <body style="background-image: none;">
 <script type="text/javascript">
@@ -27,7 +26,7 @@ var config = {
   };
   firebase.initializeApp(config);
 
- document.writeln("<h2>WELCOME TO SURVEY</h2><p></p><table><thead><tr><th>Serial number</th><th>Question</th><th>Answers</th></tr></thead><tbody>");
+document.writeln("<h2>WELCOME TO SURVEY</h2><p></p><table><thead><tr><th>Serial number</th><th>Question</th><th>Answers</th></tr></thead><tbody>");
 var playersRef = firebase.database().ref("Survey/");
 var ques=["School Name","Number of Children at the School","Number of Boys","Number of Girls","Number of benches","library available","any scholarships offered to students","any regular health checkups done at the school","any Mid-Day meals offered to students at the school"];
 var i=0;
@@ -37,11 +36,9 @@ playersRef.on("child_added", function(data, prevChildKey) {
    console.log("SchoolId: " + newPlayer.SchoolId);
    console.log("Ans: " + newPlayer.Ans);
    console.log("Previous Player: " + prevChildKey);
-    
-if(newPlayer.SchoolId == 123)
-    {
+
 $(document).ready(function () {
-  
+         
   var tr;
     tr = $('<tr/>');
 
@@ -52,7 +49,7 @@ tr.append("<td>"+ques[i]+"</td>");
     $('table').first().append(tr);
    
 
-});}
+});
 i=i+1;
 //alert(json1);
 });
@@ -62,7 +59,8 @@ i=i+1;
 
 <table style="border: 2px solid black">
     <tr>
-      
+        <th>score</th>
+        <th>team</th>
     </tr>
 </table>
 

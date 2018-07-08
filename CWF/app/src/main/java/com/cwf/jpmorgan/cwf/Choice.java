@@ -56,7 +56,9 @@ public class Choice extends AppCompatActivity {
                         school=schoolID.getText().toString();
                         SchoolDetails schoolDetails=new SchoolDetails(schoolID.getText().toString());
                         Log.i("school id",schoolID.getText().toString());
+                        Log.i("abc","abcdcccc");
                         Intent i = new Intent(Choice.this,QuestionActivity.class);
+                        Log.i("abc","abcdcccc");
                         //i.putExtra("loginEmail",email.getText().toString());
                         startActivity(i);
 

@@ -9,7 +9,7 @@ Survey()
 {
 
 }
-    Survey(String schoolid,String quesid,String Answer)
+    void Surveyenter(String schoolid,String quesid,String Answer)
     {
         this.Answer=Answer;
         this.quesid=quesid;

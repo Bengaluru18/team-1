@@ -48,9 +48,9 @@ public class QuestionActivity extends AppCompatActivity{
                 String id=mDatabase.push().getKey();
                 Log.i("abc",id);
 
-                DatabaseReference mDatabase=FirebaseDatabase.getInstance().getReference("ABC"+id);
+                DatabaseReference mDatabase=FirebaseDatabase.getInstance().getReference("Surveyss");
 
-                Survey m1=new Survey(Ans1.toString(),"1","abc");
+                Survey m1=new Survey(Ans1.getText() .toString(),"1","abc");
                 mDatabase.child(mDatabase.push().getKey()).setValue(m1);
                 Log.i("ejfnaw","afkjan");
 

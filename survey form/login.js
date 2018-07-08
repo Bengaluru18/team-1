@@ -176,7 +176,18 @@ firebase.database().ref('Survey/'+ ref.push().key).set({
 
             });  
 
-              alert("All Data Added Sucesfully");
+    
+    var rootRef = firebase.database().ref();
+var urlRef = rootRef.child("School");
+urlRef.once("value", function(snapshot) {
+  snapshot.forEach(function(child) {
+      console.log(child.DateEnd);
+      alert(child.SchoolName);
+    //if(child.key == 123) alert("yuppie");
+  });
+});
+        
+       alert("All Data Added Sucesfully");
     
     
        

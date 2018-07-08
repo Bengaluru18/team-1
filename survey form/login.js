@@ -1,5 +1,17 @@
+var i=0;
+    var config = {
+    apiKey: "AIzaSyBNTzvVNF9AVSdBp7FbpxcehI7r6fR5KDw",
+    authDomain: "codeforgood-f9f92.firebaseapp.com",
+    databaseURL: "https://codeforgood-f9f92.firebaseio.com",
+    projectId: "codeforgood-f9f92",
+    storageBucket: "codeforgood-f9f92.appspot.com",
+    messagingSenderId: "882009424031"
+  };
+  firebase.initializeApp(config);
 function log_in()
-{   var i=0;
+{   
+
+    var i=0;
     var config = {
     apiKey: "AIzaSyBNTzvVNF9AVSdBp7FbpxcehI7r6fR5KDw",
     authDomain: "codeforgood-f9f92.firebaseapp.com",
@@ -18,19 +30,13 @@ function log_in()
     var errorCode = error.code;
     var errorMessage = error.message;
       i=1;
-      alert(i);
+     // alert(i);
     alert(errorCode);
+    exit;
       
   });
- if(i==0) 	window.location = "http://www.corelangs.com/css"
-    
-    firebase.auth().onAuthStateChanged(function(user) {
-  if (user) {
-      windows.open("../login/adminpage.html") ; } else {
-    // No user is signed in.
-
-  }
-});
+    if(i==0) 	parent.open('http://localhost/afp/team-1/login/adminpage.html'); 
+ 
 
 
 }
@@ -147,7 +153,7 @@ firebase.database().ref('Survey/'+ ref.push().key).set({
             });                 
 
                               
-    firebase.database().ref('School/'+ 456).set({
+   /* firebase.database().ref('School/'+ 456).set({
         Boys: 80,
         Cluster: 1,
         DateEnd: "12/01/18",
@@ -182,9 +188,9 @@ firebase.database().ref('Survey/'+ ref.push().key).set({
         StartDate:"07/07/18",
         status:0
 
-            });  
+            });  */
 
-    var user_char = {};
+   /* var user_char = {};
     var rootRef = firebase.database().ref();
 var urlRef = rootRef.child("School");
 urlRef.once("value", function(snapshot) {
@@ -197,7 +203,7 @@ urlRef.once("value", function(snapshot) {
             alert(user_char[key]);
     //if(child.key == 456) alert("yuppie");
   });
-});
+});*/
         
        alert("All Data Added Sucesfully");
     

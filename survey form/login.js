@@ -72,7 +72,7 @@ var meals=0;
                 firebase.database().ref('Survey/'+ ref.push().key).set({
                 Ans: sname,
                     QuestionId: "1",
-			SchoolId: "123"
+			SchoolId: "456456"
 
             });
 
@@ -80,66 +80,66 @@ var meals=0;
  firebase.database().ref('Survey/'+ ref.push().key).set({
                 Ans: no,
                     QuestionId: "2",
-			SchoolId: "123"
+			SchoolId: "456"
 
             });  
  firebase.database().ref('Survey/'+ ref.push().key).set({
                 Ans: boys,
                     QuestionId: "3",
-			SchoolId: "123"
+			SchoolId: "456"
 
             });  
  firebase.database().ref('Survey/'+ ref.push().key).set({
                 Ans: girls,
                     QuestionId: "4",
-			SchoolId: "123"
+			SchoolId: "456"
 
             }); 
 
 firebase.database().ref('Survey/'+ ref.push().key).set({
                 Ans: benches,
                     QuestionId: "5",
-			SchoolId: "123"
+			SchoolId: "456"
 
             });                 
 
 firebase.database().ref('Survey/'+ ref.push().key).set({
                 Ans: washrooms,
                     QuestionId: "6",
-			SchoolId: "123"
+			SchoolId: "456"
 
             });                 
 
 firebase.database().ref('Survey/'+ ref.push().key).set({
                 Ans: library,
                     QuestionId: "7",
-			SchoolId: "123"
+			SchoolId: "456"
 
             });                 
 
 firebase.database().ref('Survey/'+ ref.push().key).set({
                 Ans: scholars,
                     QuestionId: "8",
-			SchoolId: "123"
+			SchoolId: "456"
 
             });                 
 
 firebase.database().ref('Survey/'+ ref.push().key).set({
                 Ans: health,
                     QuestionId: "9",
-			SchoolId: "123"
+			SchoolId: "456"
 
             });                 
 
 firebase.database().ref('Survey/'+ ref.push().key).set({
                 Ans: meals,
                     QuestionId: "10",
-			SchoolId: "123"
+			SchoolId: "456"
 
             });                 
 
                               
-    firebase.database().ref('School/'+ 123).set({
+    firebase.database().ref('School/'+ 456).set({
         Boys: 80,
         Cluster: 1,
         DateEnd: "12/01/18",
@@ -163,7 +163,7 @@ firebase.database().ref('Survey/'+ ref.push().key).set({
         status:0
 
             });  
-        firebase.database().ref('School/'+ 789).set({
+        firebase.database().ref('School/'+ 456).set({
         Boys: 80,
         Cluster: 1,
         DateEnd: "12/01/18",
@@ -176,14 +176,18 @@ firebase.database().ref('Survey/'+ ref.push().key).set({
 
             });  
 
-    
+    var user_char = {};
     var rootRef = firebase.database().ref();
 var urlRef = rootRef.child("School");
 urlRef.once("value", function(snapshot) {
   snapshot.forEach(function(child) {
-      console.log(child.DateEnd);
-      alert(child.SchoolName);
-    //if(child.key == 123) alert("yuppie");
+            var key = child.key;
+            var value = child.val().SchoolName;
+      
+            if(1==value)
+                alert("yuppie");
+            alert(user_char[key]);
+    //if(child.key == 456) alert("yuppie");
   });
 });
         

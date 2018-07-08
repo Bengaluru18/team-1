@@ -22,10 +22,9 @@
         android:id="@+id/AddSchoolButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="18dp"
         android:layout_marginTop="165dp"
         android:text="Add School"
-        app:layout_constraintBottom_toTopOf="@+id/Submit"
+        app:layout_constraintBottom_toTopOf="@+id/tvSchool"
         app:layout_constraintEnd_toEndOf="@+id/ViewDetailsButton"
         app:layout_constraintStart_toStartOf="@+id/textView"
         app:layout_constraintTop_toTopOf="parent" />
@@ -34,13 +33,13 @@
         android:id="@+id/Submit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
-        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="21dp"
+        android:layout_marginEnd="39dp"
         android:text="SUBMIT"
         app:layout_constraintBottom_toTopOf="@+id/textView2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/etSchoolID"
-        app:layout_constraintTop_toBottomOf="@+id/AddSchoolButton" />
+        app:layout_constraintTop_toBottomOf="@+id/tvSchool" />
 
     <TextView
         android:id="@+id/textView"
@@ -69,23 +68,24 @@
     <EditText
         android:id="@+id/etSchoolID"
         android:layout_width="0dp"
-        android:layout_height="37dp"
-        android:layout_marginEnd="25dp"
-        android:layout_marginStart="70dp"
+        android:layout_height="52dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginStart="68dp"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/Submit"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.51" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tvSchool"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="3dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="2dp"
         android:text="Enter School ID"
+        app:layout_constraintBottom_toTopOf="@+id/Submit"
         app:layout_constraintEnd_toEndOf="@+id/AddSchoolButton"
         app:layout_constraintTop_toBottomOf="@+id/AddSchoolButton" />
 </android.support.constraint.ConstraintLayout>

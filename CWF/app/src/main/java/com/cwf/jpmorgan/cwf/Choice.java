@@ -19,6 +19,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class Choice extends AppCompatActivity {
 
+    public  String school;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,7 +53,7 @@ public class Choice extends AppCompatActivity {
                 Submit.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-
+                        school=schoolID.getText().toString();
                         SchoolDetails schoolDetails=new SchoolDetails(schoolID.getText().toString());
                         Log.i("school id",schoolID.getText().toString());
                         Intent i = new Intent(Choice.this,QuestionActivity.class);
@@ -70,6 +71,8 @@ public class Choice extends AppCompatActivity {
 
 
     }
+
+
 
 
 

@@ -24,7 +24,7 @@ public class QuestionActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_question);
        // ListView listView1;
-
+        
 
          EditText Ans1=(EditText)findViewById(R.id.ans1);
         EditText Ans2=(EditText)findViewById(R.id.ans2);

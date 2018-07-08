@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
                                 {
                                     Toast.makeText(MainActivity.this,"Logged in " ,Toast.LENGTH_LONG).show();
                                     Log.i("login","success");
-                                    Intent i = new Intent(MainActivity.this,QuestionActivity.class);
+                                    Intent i = new Intent(MainActivity.this,Choice.class);
                                     //i.putExtra("loginEmail",email.getText().toString());
                                     startActivity(i);
 

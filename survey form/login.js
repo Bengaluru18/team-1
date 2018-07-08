@@ -1,6 +1,6 @@
-  // Initialize Firebase
-  // Initialize Firebase
-  var config = {
+function log_in()
+{   var i=0;
+    var config = {
     apiKey: "AIzaSyBNTzvVNF9AVSdBp7FbpxcehI7r6fR5KDw",
     authDomain: "codeforgood-f9f92.firebaseapp.com",
     databaseURL: "https://codeforgood-f9f92.firebaseio.com",
@@ -9,21 +9,29 @@
     messagingSenderId: "882009424031"
   };
   firebase.initializeApp(config);
-
-function login()
-{
-
-  var userEmail = document.getElementById("email").value;
-  var userPass = document.getElementById("password").value;
-    useremailid=userEmail;
+  var userEmail = document.getElementById("aemail").value;
+  var userPass = document.getElementById("apassword").value;
     
   firebase.auth().signInWithEmailAndPassword(userEmail, userPass).catch(function(error) 
   {
     // Handle Errors here.
     var errorCode = error.code;
     var errorMessage = error.message;
-    alert("Error");
+      i=1;
+      alert(i);
+    alert(errorCode);
+      
   });
+ if(i==0) 	window.location = "http://www.corelangs.com/css"
+    
+    firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+      windows.open("../login/adminpage.html") ; } else {
+    // No user is signed in.
+
+  }
+});
+
 
 }
 

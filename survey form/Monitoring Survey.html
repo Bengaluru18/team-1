@@ -15,6 +15,27 @@
     messagingSenderId: "882009424031"
   };
   firebase.initializeApp(config);
+var playersRef = firebase.database().ref("Projects/");
+playersRef.on("child_added", function(data, prevChildKey) {
+   var newPlayer = data.val();
+   console.log("SchoolId: " + newPlayer.Task_id);
+   console.log("Ans: " + newPlayer.Status);
+   console.log("Previous Player: " + prevChildKey);
+
+$(document).ready(function () {
+         
+  var tr;
+    tr = $('<tr/>');
+
+ tr.append("<td>" + newPlayer.Task_id + "</td>");
+tr.append("<td>"+newPlayer.Status+"</td>");
+    tr.append("<td>" + newPlayer.Remarks + "</td>");
+
+    $('table').first().append(tr);
+   
+});
+
+});
 
 
 
@@ -31,7 +52,7 @@ playersRef.on("child_added", function(data, prevChildKey) {
 console.log(newX.Status);
  if(newX.Status=="Incomplete"){c1=c1+1;}
 else if(newX.Status=="Completed"){c2=c2+1;}
-    else {c3=c3+1;}
+    else if(newX.Status=="Not started"){c3=c3+1;}
 
 
       // Load the Visualization API and the corechart package.
@@ -101,11 +122,15 @@ else if(newX.Status=="Completed"){c2=c2+1;}
     $(document).ready(function(){
         $(".add-row").click(function(){
 
-            var a = $("#1").val();a.replace(/["]/g, "");
-            var b = $("#3").val();b.replace(/["]/g, "");
-            var c = $("#2").val();b.replace(/["]/g, "");
+            var a = $("#1").val();
+
+            var b1 = $("#3").val();
+var b=b1.replace("\"","");
+                var c = $("#2").val();
+
 
 var ref = firebase.database().ref();
+            //alert(ref);
                      
                 firebase.database().ref('Projects/'+ ref.push().key).set({
                 Human:1,
@@ -119,9 +144,7 @@ var ref = firebase.database().ref();
             });
            
 
-            var markup = "<tr><td>" + a + "</td><td>"+ b +"</td><td>"+ c + "</td></tr>";
-            
-            $("table tbody").append(markup);
+       
         });
         
         // Find and remove selected table rows
